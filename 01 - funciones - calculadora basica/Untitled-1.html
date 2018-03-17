@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<script>    
+
+function suma (n1, n2){
+alert(n1 + n2);
+}
+
+function resta (n1, n2){
+alert(n1 - n2);
+}
+
+function multi (n1, n2){
+alert(n1 * n2);
+}
+
+function divi (n1, n2){
+alert(n1 / n2);
+}
+
+
+
+</script>
+
+    
+</head>
+<body>
+
+    <script>
+    var n1;
+    var n2;
+    var operador;
+
+        n1 = parseInt(prompt("ingrese el primer valor"));
+        n2 = parseInt(prompt("ingrese el segundo valor"));
+        operador = prompt("ingrrese: suma / resta / mult / div");
+
+        switch(operador){
+            case "suma":
+                alert(n1+n2);
+            case "resta":
+            alert(n1-n2);
+            case "mult":
+            alert(n1*n2);
+            case "div":
+            alert(n1/n2);
+        }
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>

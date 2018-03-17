@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<script>
+function unClick (){
+    alert("probando evento un click");
+}
+
+function dosClick (){
+    alert("probando evento dos clicks");
+}
+
+function pasaCursor (){
+    alert("probando evento paso Cursor");
+}
+</script>
+
+</head>
+<body>
+    <p>pasale el mouse</p>
+    <img src="img/rocket77.jpg" alt="rocket to rusia 1977" onmouseout="pasaCursor()">
+    <br>
+    <p>hacele click de mouse</p>
+    <img src="img/adios95.jpg" alt="adios amigos 95" onclick="unClick()">
+    <br>
+    <p>hacele doble click de mouse</p>
+    <img src="img/ramones76.jpg" alt="ramones 76" ondblclick="dosClick()">
+
+</body>
+</html>
