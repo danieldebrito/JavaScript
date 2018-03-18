@@ -36,7 +36,6 @@ table{
 </style>
 
 <script>
-
   var valor=0, resultado=0;
   var operador='', operadorAnt='';
   var cifraDisplay='0';
@@ -85,6 +84,7 @@ function igual (){
   cargaValor (operadorAnt);
   valor = 0;
   primeraOperacion = false;
+  operadorAnt='';
 }
 
 function operar (operador){
