@@ -33,25 +33,24 @@ table{
 	padding:5px;
 }
 
-
-
 </style>
 
 <script>
 
-  var valorUno=0, valorDos=0, resultado=0;
-  var operador='';
+  var valor=0, resultado=0;
+  var operador='', operadorAnt='';
   var cifraDisplay='0';
+  var primeraOperacion = false;
 
 
 function carga(num){
 
-    if(num == ','){
+    if(num == '.'){
       if(cifraDisplay == '0'){
         cifraDisplay += num;
       }
       else{
-        if(!cifraDisplay.includes(',')){
+        if(!cifraDisplay.includes('.')){
           cifraDisplay +=num;
         }
       }
@@ -68,47 +67,70 @@ function carga(num){
   cifraDisplay = document.getElementById('display').value;
 }
 
-function cargaValorUno (val){
-  valorUno = parseInt(document.getElementById('display').value);
+function cargaValor (val){
+  valor = parseFloat(document.getElementById('display').value);
   cifraDisplay = '0';
-  operador = val;
-  operar(val);
+
+  if(!primeraOperacion){
+    operador = val;
+    operadorAnt = val;
+  }
+  else{
+    operador = operadorAnt;
+    operadorAnt = val;
+  }
+  operar(operador);
 }
 
 function igual (){
-  cargaValorUno (operador);
-  valorDos = 0;
-  valorUno = 0;
+  cargaValor (operadorAnt);
+  valor = 0;
+  primeraOperacion = false;
 }
 
 function operar (operador){
   switch (operador) {
     case ('/'):
-    resultado = valorUno/valorDos;
-    document.getElementById('display').value = resultado;
-    valorDos = resultado;
-    break;
+      if(primeraOperacion){
+        if(valor!=0){
+          resultado = resultado/valor;
+        }
+        else{
+          resultado = "ERROR DIVIDIR POR CERO";
+        }
+      }
+      else{
+        resultado=valor;
+      }
+      break;
     case ('*'):
-    resultado = valorUno*valorDos;
-    document.getElementById('display').value = resultado;
-    valorDos = resultado;
-    break;
+      if(primeraOperacion){
+        resultado = resultado*valor;
+      }
+      else{
+        resultado=valor;
+      }
+      break;
     case ('+'):
-    resultado = valorUno+valorDos;
-    document.getElementById('display').value = resultado;
-    valorDos = resultado;
-    break; 
+      if(primeraOperacion){
+        resultado = resultado+valor;
+      }
+      else{
+        resultado=valor;
+      }
+      break;
     case ('-'):
-    resultado = resultado-valorUno;
-    document.getElementById('display').value = resultado;
-    //valorUno = resultado;
-    break;
+      if(primeraOperacion){
+        resultado = resultado-valor;
+      }
+      else{
+        resultado=valor;
+      }
+      break;
   }
   document.getElementById('display').value = resultado;
+  primeraOperacion = true;
 }
-  
-
-
 </script>
 
 
@@ -121,10 +143,10 @@ function operar (operador){
     <input name="display" type="text" class="color_display" id="display" size="25"></td>
   </tr>
   <tr>
-    <td width="26%"><input name="button" type="button" class="numero" id="button" value="+" onclick="cargaValorUno('+')"></td>
-    <td width="21%"><input name="button2" type="button" class="numero" id="button2" value="-" onclick="cargaValorUno('-')"></td>
-    <td width="21%"><input name="button3" type="button" class="numero" id="button3" value="*" onclick="cargaValorUno('*')"></td>
-    <td width="32%"><input name="button4" type="button" class="numero" id="button4" value="/" onclick="cargaValorUno('/')"></td>
+    <td width="26%"><input name="button" type="button" class="numero" id="button" value="+" onclick="cargaValor('+')"></td>
+    <td width="21%"><input name="button2" type="button" class="numero" id="button2" value="-" onclick="cargaValor('-')"></td>
+    <td width="21%"><input name="button3" type="button" class="numero" id="button3" value="*" onclick="cargaValor('*')"></td>
+    <td width="32%"><input name="button4" type="button" class="numero" id="button4" value="/" onclick="cargaValor('/')"></td>
   </tr>
   <tr>
     <td><input name="num7" type="button" class="numero" id="num7" value="7" onclick="carga(7)"></td>
@@ -132,7 +154,7 @@ function operar (operador){
     <td><input name="num9" type="button" class="numero" id="num9" value="9" onclick="carga(9)"></td>
     <td><input name="CE" type="button" class="numero" id="ce" value="ce" onclick="location.reload()"></td>
     
-    <td>&nbsp;</td>
+
   </tr>
   <tr>
     <td><input name="num4" type="button" class="numero" id="num4" value="4" onclick="carga(4)"></td>
@@ -148,7 +170,7 @@ function operar (operador){
   </tr>
   <tr>
     <td><input name="num0" type="button" class="numero" id="num0" value="0" onclick="carga(0)"></td>
-    <td><input name="button17" type="button" class="numero" id="button17" value="," onclick="carga(',')"></td>
+    <td><input name="button17" type="button" class="numero" id="button17" value="," onclick="carga('.')"></td>
     <td colspan="2"><input name="button12" type="button" class="igual" id="button12" value="=" onclick="igual()" ></td>
   </tr>
 </table>
