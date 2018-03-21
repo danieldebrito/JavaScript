@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <title>jquery 1</title>
+
+    <script>
+    $(document).ready(function(){
+        alert("la funcion text no reconoce etiquetas html");
+        $('#contenedor1').text("<p>no reconoce etiquetas html con text</p>");
+
+        alert("se puede usar usando el selector css en cascada");
+        $('#errores1 h2').text("texto cambiado");
+
+
+    });
+    </script>
+
+</head>
+<body>
+
+    <h3>funciones jquery</h3>
+
+
+    <div id="contenedor">
+        <div id="errores1" class="contenedor2">
+            <h2>errores 01</h2>
+        </div>
+    </div>
+
+    <div id="contenedor1">
+        <div id="errores1" class="contenedor2">
+            <h2>errores 01</h2>
+        </div>
+    </div>
+    
+</body>
+</html>

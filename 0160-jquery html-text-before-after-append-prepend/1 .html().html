@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <title>jquery 1</title>
+
+    <script>
+    $(document).ready(function(){
+        alert("voy a mostrar texto html de un div en un alert con etiquetas y todo");
+        alert($('#contenedor').html());
+
+        alert("voy a mostrar texto html de un div en un alert sin etiquetas");
+        alert($('#errores1 h2').html());
+
+
+        alert("ahora reemplazo texto y etiquetas html");
+    });
+
+            $(document).ready(function(){
+            $('#contenedor3').html(" <h1>holaaa</h1>");
+        });
+        </script>
+
+
+
+</head>
+<body>
+
+    <h3>funciones jquery</h3>
+    <p>
+        <br>1 .html()
+    </p>
+
+    <p> 1.a ) muestra el contenido en un alert con la fuuncion html => <br>
+        $(document).ready(function(){<br>
+        alert($('#contenedor').html());<br>
+        });
+    
+    </p>
+
+    <p>
+        1.b) reemplazo texto : 
+
+
+    </p>
+
+    <div id="contenedor">
+        <div id="errores1" class="contenedor2">
+            <h2>errores 01</h2>
+        </div>
+    </div>
+
+    <div id="contenedor3">
+            <div id="errores1" class="contenedor4">
+                <h2>errores 01</h2>
+            </div>
+        </div>
+    
+
+    
+</body>
+</html>

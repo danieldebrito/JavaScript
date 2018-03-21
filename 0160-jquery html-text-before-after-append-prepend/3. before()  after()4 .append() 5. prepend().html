@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <title>jquery 1</title>
+
+    <script>
+    $(document).ready(function(){
+        alert("agrega texto a continuacion dentro del div");
+        $('#contenedor').append("<h1>apend</h1>");
+
+        alert("ahora prepend dentro del div ");
+        $('#contenedor').prepend("<h1>prepend</h1>");
+
+        alert("agrega texto a continuacion del div");
+        $('#contenedor').before("<h1>before</h1>");
+
+        alert("ahora after");
+        $('#contenedor').after("<h1>after</h1>");
+    });
+    </script>
+
+
+</head>
+<body>
+
+    <h3>funciones jquery</h3>
+    <p>
+        <br>4 .append()
+        <br>5 .prepend()
+        <br>5 .before()
+        <br>5 .after()
+
+
+    </p>
+
+
+    <div id="contenedor" style="background-color:red">
+        <div id="errores1" class="contenedor2">
+            <h2>errores 01</h2>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+</html>
