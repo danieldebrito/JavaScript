@@ -1,0 +1,15 @@
+#banner {
+    background-color: brown;
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    left: 400px;
+    top: 50px;
+    font-size: 36px;
+    text-align: center;
+}
+
+#sustitucion {
+    float: left;
+    font-size: 36px;
+}
