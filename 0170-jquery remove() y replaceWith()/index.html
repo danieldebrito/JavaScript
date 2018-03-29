@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="css\style.css">
     <title>jquery 1</title>
 
-<script> 
+<script>
+    // callback de funciones, cuando termina la animacion de la primera se ejecuta la otra funcion
     $(document).ready(function(){
-        $("#imagenes").height(1000).hide(1000).hide().fadeIn(1000);
-
-        //var z = document.getElementById('cerrar');
-        //z.addEventListener('click',cerrarBanner(), false);
-
-        document.getElementById("cerrar").addEventListener("click", cerrarBanner,false);
-        document.getElementById("imagen1").addEventListener("click",carrito, false);
+        $("#imagenes").height(1000).hide().fadeIn(1000,function(){
+            $("#bannerContenedor").html("<div id='banner'><h2>banner de</br>prueba</h2><button id='cerrar'>cerrar</button></div>").slideUp(30000).delay(800).fadeIn(4320);
+            document.getElementById("cerrar").addEventListener("click", cerrarBanner,false);
+            document.getElementById("imagen1").addEventListener("click",carrito, false);
+        });
     });
 
     function cerrarBanner(){
         $("#banner").remove();
     };
-
     function carrito(){
         $("#imagen1").replaceWith("<div id='sustitucion'>agregado al carro</div>");
     };
@@ -31,9 +29,8 @@
 </head>
 <body>
 
-    <div id="banner">
-        banner de prueba
-    <p id="cerrar">cerrar</p>
+    <div id="bannerContenedor">
+
     </div>
 
 <p><h1>carrito de compras</h1></p>
