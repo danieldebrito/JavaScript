@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <link rel="stylesheet" href="css\style.css">
+    <title>jquery 1</title>
+
+<script>
+    // callback de funciones, cuando termina la animacion de la primera se ejecuta la otra funcion
+    $(document).ready(function(){
+        $("#carrete").height(1000).hide().fadeIn(1000,function(){
+            $("#bannerContenedor").html("<div id='banner'><h2>banner de</br>prueba</h2><button id='cerrar'>cerrar</button></div>").slideUp(30000).delay(800).fadeIn(4320);
+            document.getElementById("cerrar").addEventListener("click", cerrarBanner,false);
+            
+            //document.getElementById("imagen1").addEventListener("click",carrito, false);
+
+            var imgs = document.querySelectorAll("#carrete img");
+            var long = imgs.length;
+
+            for(i=0;i<long;i++){
+                imgs[i].addEventListener("click",carrito,false);
+            }
+        });
+    });
+
+    function cerrarBanner(){
+        $("#banner").remove();
+    };
+    function carrito(evento){
+        if(evento.target == imagen1){
+            $("#imagen1").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+        if(evento.target == imagen2){
+            $("#imagen2").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+        if(evento.target == imagen3){
+            $("#imagen3").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+        if(evento.target == imagen4){
+            $("#imagen4").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+        if(evento.target == imagen5){
+            $("#imagen5").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+        if(evento.target == imagen6){
+            $("#imagen6").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+        }
+
+
+        
+    };
+</script>
+
+</head>
+<body>
+
+    <div id="bannerContenedor">
+
+    </div>
+
+<p><h1>carrito de compras</h1></p>
+
+<div id="carrete">
+    <img src="img/adios95.jpg" alt="" id="imagen1">
+    <img src="img/end80.jpg" alt=""id="imagen2">
+    <img src="img/leave77.jpg" alt=""id="imagen3">
+    <img src="img/ramones76.jpg" alt=""id="imagen4">
+    <img src="img/road78.jpg" alt=""id="imagen5">
+    <img src="img/rocket77.jpg" alt=""id="imagen6">
+</div>
+
+    
+</body>
+</html>
+
+    function carrito(event){
+    if(event.target == imagen1){
+        $("#imagen1").replaceWith("<div id='sustitucion'>agregado al carro</div>");
+    }
+
+        
+    };
+
+    function cerrarBanner(){
+        $("#banner").remove();
+    };
+</script>
+
+</head>
+<body>
+
+    <div id="bannerContenedor">
+
+    </div>
+
+<p><h1>carrito de compras</h1></p>
+
+<div id="carrete">
+    <img src="img/adios95.jpg" alt="" id="imagen1">
+    <img src="img/end80.jpg" alt=""id="imagen2">
+    <img src="img/leave77.jpg" alt=""id="imagen3">
+    <img src="img/ramones76.jpg" alt=""id="imagen4">
+    <img src="img/road78.jpg" alt=""id="imagen5">
+    <img src="img/rocket77.jpg" alt=""id="imagen6">
+</div>
+
+    
+</body>
+</html>
