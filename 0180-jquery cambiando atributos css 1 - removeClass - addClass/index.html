@@ -7,6 +7,28 @@
     <script src="bower_components\jquery\dist\jquery.min.js"></script>
     <link rel="stylesheet" href="css\style.css">
     <title>Documento sin título</title>
+
+    <script>
+    $(document).ready(function(){
+        //$("a[href^='https://']").addClass("linkdestacacursos");
+        //$("a[href^='http://']").addClass("linkdestacacursos");
+
+        document.getElementById("cursos").addEventListener("click", resaltarCursos,false);
+        document.getElementById("informacion").addEventListener("click",resaltaInfo)
+
+    });
+    
+    function resaltarCursos(){
+        $(".cursos").addClass("linkdestacacursos");
+        $(".ejemplos").removeClass("linkdestacacursos");
+    };
+    
+    function resaltaInfo(){
+        $(".ejemplos").addClass("linkdestacacursos");
+        $(".cursos").removeClass("linkdestacacursos");
+    };
+    
+    </script>
 </head>
 <body>
     <div id="contieneEnlaces">
