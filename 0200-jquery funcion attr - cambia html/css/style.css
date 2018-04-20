@@ -1,0 +1,22 @@
+h1{
+	text-align:center;
+}
+
+div{
+	width:20%;
+	margin:0 100px;
+	float:left;
+	border:#F00 solid 2px;
+	padding:10px;
+}
+
+table{
+	width:100%;
+	margin-top:10px;
+}
+
+
+.noticia1{
+	background-color: coral;
+}
+

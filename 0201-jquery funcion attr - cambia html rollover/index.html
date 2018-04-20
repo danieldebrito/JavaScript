@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <link rel="stylesheet" href="css\style.css">
+    <title>funcion css prueba</title>
+
+    <script>
+        $(document).ready(function () {
+          var elementos = document.querySelectorAll("img");
+
+          var tam = elementos.length;
+
+          for(var i = 0; i < tam ; i++){
+            $(elementos[i]).mouseover(cambiar);
+            $(elementos[i]).mouseout(restaurar);
+          }
+
+        });
+
+        function cambiar(e){
+          if(e.target==img1){
+            $("#img1").attr("src","img/adios95.jpg");
+          }
+          if(e.target==img2){
+            $("#img2").attr("src","img/end80.jpg");
+          }
+          if(e.target==img3){
+            $("#img3").attr("src","img/leave77.jpg");
+          }
+          if(e.target==img4){
+            $("#img4").attr("src","img/ramones76.jpg");
+          }
+        }
+
+        function restaurar(e){
+          if(e.target==img1){
+            $("#img1").attr("src","img/tenues/adios95.jpg");
+          }
+          if(e.target==img2){
+            $("#img2").attr("src","img/tenues/end80.jpg");
+          }
+          if(e.target==img3){
+            $("#img3").attr("src","img/tenues/leave77.jpg");
+          }
+          if(e.target==img4){
+            $("#img4").attr("src","img/tenues/ramones76.jpg");
+          }
+        }
+
+
+    </script>
+</head>
+
+<body>
+<h1>Galería de imágenes</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="img/tenues/adios95.jpg" id="img1" ></td>
+    <td><img src="img/tenues/end80.jpg" id="img2" ></td>
+    <td><img src="img/tenues/leave77.jpg" id="img3" ></td>
+    <td><img src="img/tenues/ramones76.jpg" id="img4" ></td>
+  </tr>
+</table>
+</body>
+</html>

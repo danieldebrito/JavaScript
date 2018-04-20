@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components\jquery\dist\jquery.min.js"></script>
+    <link rel="stylesheet" href="css\style.css">
+    <title>funcion css prueba</title>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#img1").mouseover(cambiar);
+            $("#img1").mouseout(restaurar);
+
+
+        });
+
+        function cambiar(){
+            $("img").attr("src","img/end80.jpg");
+        }
+
+        function restaurar(){
+            $("img").attr("src","img/adios95.jpg");
+
+        }
+    </script>
+</head>
+
+<body>
+    
+    <img src="img/adios95.jpg" id="img1">
+
+
+</body>
+
+</html>
