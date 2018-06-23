@@ -9,11 +9,11 @@ $(document).ready(function() {
 			// traigo info del dom y guardo en la variables
 			usuario:$("#usuario").val(),
 			contra:$("#contra").val()
-        }*/
+        }*/  //  de la misma forma ==>
 		var datosFormulario = $(this).serialize();  // para simplificar, si el form tiene 50 campos
 												    // lo serializa y ahorra tipear codigo
 
-		$.get("login.php",datosFormulario,procesarDatos);
+		$.get("login.php", datosFormulario, procesarDatos);
 
 		return false; //para que no recargue
 	});	
@@ -21,10 +21,9 @@ $(document).ready(function() {
 	//datos deviueltos 
 	function procesarDatos(datos_devueltos){
 		if(datos_devueltos=="autorizado"){
-			$("#contenidos_externos").html("<P>usuario correcto</p>");
-		}
-		else{
-			$("#contenidos_externos").html("<P>usuario incorrecto</p>");
+			$("#ce").html("<p> usuario correcto </p>");
+		}else{
+			$("#ce").html("<p> usuario incorrecto </p>");
 		}
 	}
 }); 
