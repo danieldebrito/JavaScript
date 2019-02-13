@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="bower_components\jquery\dist\jquery.min.js"></script>
+	<link rel="stylesheet" href="css\style.css">
+	<title>funcion css prueba</title>
+<style>
+
+img{
+	margin:0 20px;
+	
+}	
+#contenedor{
+	width:75%;
+	margin:auto;
+}
+
+</style>
+<script>
+	$(document).ready(function(){
+		$("#miboton").click(cambiar);
+	});
+
+	function cambiar(){
+		$("img").fadeOut(1000).fadeIn(1000).width(310);
+	}
+
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+<img src="imgs/1.jpg">
+<img src="imgs/2.jpg">
+<img src="imgs/3.jpg">
+<img src="imgs/4.jpg">
+</div>
+<div id="boton">
+<input type="button" id="miboton" value="Acción">
+</div>
+
+</body>
+</html>
